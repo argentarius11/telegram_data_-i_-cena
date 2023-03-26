@@ -4,10 +4,10 @@ Website https://easysimpletrade.blogspot.com
 Youtube https://www.youtube.com/channel/UCaAH8Um7QCIPsOXH47zHAfQ
 */
 //time_str = StrFormatDateTime("%H:%M:%S", LastValue(DateTime()));
-BuyMessage = "BUY "  + Name() + " cena "+C ;
-SellMessage="Sell "+  Name() + " cena "+C;
-ShortMessage = " Short "+  Name() + " cena "+C  ;
-CoverMessage="Cover "+  Name() + " cena "+C ;
+BuyMessage = "BUY "  + Name() + " cena "+C+ " godz "+tn ;
+SellMessage="Sell "+  Name() + " cena "+C+ " godz "+tn;
+ShortMessage = " Short "+  Name() + " cena "+C + " godz "+tn ;
+CoverMessage="Cover "+  Name() + " cena "+C + " godz "+ tn;
 if (LastValue(ValueWhen(Buy,BarIndex())==BarIndex()) AND StaticVarGet("BuyAlert")==0 )
 {
 ih = InternetOpenURL("https://api.telegram.org/bot6217858654:AAGDDVUdBikRa8ayIpg3MKHDq7bF7AZE4Ms/sendMessage?chat_id=-1001619416780&text="+BuyMessage); 
@@ -52,3 +52,5 @@ if (LastValue(TimeNum()) == StaticVarGet("covertAlertBar"))
 StaticVarSet("coverAlert",1); 
 else
 StaticVarSet("coverAlert",0); 
+ ////////////////////////////////////////////////////////////////////////
+ 
